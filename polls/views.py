@@ -34,7 +34,7 @@ import ctypes
 #libc = ctypes.CDLL(libname)
 from ctypes import *
 
-libc = CDLL("/polls/libhello.so")
+libc = CDLL("./libhello.so")
 #alloc_func = libc.mainfunc
 #alloc_func.restype = ctypes.POINTER(ctypes.c_char)
 
