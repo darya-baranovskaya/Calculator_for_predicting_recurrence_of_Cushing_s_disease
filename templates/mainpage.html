@@ -110,7 +110,7 @@ a:visited {
 <h2 id=Calculator>Enter patient data</h2>
 
 
-<form action=""  method="post" target="_self" enctype="multipart/form-data">
+<form action="" onsubmit="showAnsw()" method="post" target="_self" enctype="multipart/form-data">
     {% csrf_token %}
   <p>  <label for="sex">Sex<br/></label>
 	<input id = "sex" type="radio" name="sex" value="1" required>male<Br>
@@ -138,7 +138,7 @@ a:visited {
 
 </p>
 <div class="forms_buttons">
-    <input class = "submit_button" name = "submit" type="submit" value="Calculate" onclick ="showAnsw()">
+    <input class = "submit_button" name = "submit" type="submit" value="Calculate">
    <input class = "clear_button" name = "reset" type="reset" value="Clear" onclick ="deleteAnsw()"></div>
 </form>
 
