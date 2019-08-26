@@ -33,8 +33,9 @@ import ctypes
 #libname = "/pr2/polls/libhello.so"
 #libc = ctypes.CDLL(libname)
 from ctypes import *
-
-libc = CDLL("./libhello.so")
+import os
+dir = os.path.dirname(os.path.realpath(__file__)) + '/'
+libc = stypes.CDLL(dir + "libhello.so")
 #alloc_func = libc.mainfunc
 #alloc_func.restype = ctypes.POINTER(ctypes.c_char)
 
