@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator for predicting recurrence of Cushing's disease</title>
+    <META name="Calculator for predicting recurrence of Cushing's disease", content="Cushing's, calculator, reсurrence, remission">
+    <!--<link rel="stylesheet" type="texxt/css" href="{%  static "templates/static/style.css" %}/">-->
+    {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    <!--<link href="{{ STATIC_URL }}style.css" rel="stylesheet" type="text/css" media="screen"/>-->
+
+</head>
+
+
+
+<!--<body leftmargin=100 rightmargin = 100 bgcolor = #112232
+ scroll = no link = #fe4918 vlink=#fffff0 background = "main.jpg" bgproperties=fixed>-->
+<body leftmargin=100 rightmargin = 100
+ scroll = no link = #fe4918 vlink=#fffff0 >
+ <header>
+	 <H1 class="mainheader"> Calculator for predicting recurrence of
+	Cushing's disease<br/> within 3 years after endoscopic transnasal
+	adenomectomy <br/>based on an artificial neural network
+</H1>
+</header>
+<section>
+<h3>References:</h3>
+<p class="common text">E. Nadezhdina, O. Rebrova, A. Grigoriev. Neural network for predicting recurrence of the Cushing's disease <br/> within three years after neurosurgical treatment. ECE 2019. DOI: 10.1530/endoabs.63.P259 <br/>
+	E.Y. Nadezhdina, O.Yu. Rebrova, A.Y. Grigoriev, et al. Prediction of recurrence and long-term remission <br/>in patients with Cushing disease after successful transnasal adenomectomy. Pituitary (in press)
+</p>
+</section>
+<!-- первая страница с обзей информацией-->
+
+
+<section>
+<hr size="6", color="#472622", width="100%", allign="center"/>
+<h2 id=Calculator>Enter patient data</h2>
+
+
+<form action=""  method="post" target="_self" enctype="multipart/form-data">
+    {% csrf_token %}
+  <p>  <label for="sex">Sex<br/></label>
+	<input id = "sex" type="radio" name="sex" value="1" required>male<Br>
+	<input id = "sex" type="radio" name="sex" value="2">female
+  </p>
+<p>
+    <label for="age">Age at the time of surgery(years):<br/></label>
+<input id = "age" type="number" name = "age" min="15" max="64" required/></p>
+
+<p><label for="duration">Duration of disease(months):<br/></label>
+<input id = "duration" type="number" step="0.01" name = "duration"  min="0.33" max="22" required/>
+</p>
+
+	<p><label for="mri">MRI pituitary:<br/></label>
+	<input id = "mri" type="radio" name="mri" value="1" required>microadenoma &le; 10mm<Br>
+	<input id = "mri" type="radio" name="mri" value="2">macroderma > 10mm<Br>
+	<input id = "mri" type="radio" name="mri" value="3">non-visualised adenoma
+</p>
+    <p><label for="cortisol">Morning serum cortisol on 1-10 days after surgery (nmol/l):</label>
+<input id = "cortisol" type="number"  name ="cortisol" min="8" max="626" required/>
+</p>
+    <p><label for="plasma">Morning plasma ACTH on 1-10 days after surgery (pg/ml):</label>
+<input id = "plasma" type="number" name = "plasma" min="1" max="55" required />
+    </p>
+
+</p>
+<div class="forms_buttons">
+    <input class = "submit_button" name = "submit" type="submit" value="Calculate" onclick ="showAnsw()">
+   <input class = "clear_button" name = "reset" type="reset" value="Clear" onclick ="deleteAnsw()"></div>
+</form>
+
+<!--<button onclick="addParagraphText();"> Calculate </button>-->
+<p id = "answpar">
+
+{{ answer }}
+    <br/>
+    {{percents}}
+</p>
+</section>
+<section>
+
+ <script type="text/javascript">
+    function deleteAnsw() {
+    document.getElementById("answpar").innerHTML = "";
+}
+
+function showAnsw() {
+    document.getElementById("answpar").innerHTML = "{{answer}}" + "<br/>" + "{{percents}}";
+}
+
+    </script>
+
+<hr size="6", color="#472622", width="100%", allign="center"/>
+<footer>
+    <p>
+<a id="center" href="https://www.endocrincentr.ru"><img src="static/polls/images/N.jpg" width="100"/> </a>
+    <!--<a href="https://www.endocrincentr.ru" color="#D4C9C7">NMRS of endocrinology</a>-->
+    </p>
+</footer>
+</section>
+</body>
+</html>

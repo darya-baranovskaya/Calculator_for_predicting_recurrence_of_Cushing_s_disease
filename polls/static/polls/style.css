@@ -1,0 +1,66 @@
+
+.forms_buttons input {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 28px 45px;
+  text-decoration: none;
+    font-size: 105.5%;
+  margin: 4px 2px;
+  cursor: pointer;
+    border-radius: 4px;
+}
+
+input [type = number]{
+  width: 100%;
+}
+
+#sex, #mri {
+    background-color: #4CAF50;
+    top:0;
+    left:0;
+    border: 15px #4CAF50;
+    border-color: #4CAF50;
+    padding-top: 1px;
+}
+
+.forms_buttons input[type = reset]{
+  background-color: #B43939
+}
+hr {
+    border: 10px;
+    border-radius: 5px;
+}
+
+body {
+  font-size: 107.5%; /* font-size 1em = 10px on default browser settings */
+    line-height: 1.1;
+}
+
+
+p {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5 {
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+#duration, #plasma, #age, #cortisol {
+    width: 11%;
+    height: 28px;
+    margin: .6rem 0;
+    padding: 12px 20px;
+    font-size: 105.5%;
+    background-color: #4CAF50;
+
+}
+a:link {
+  color: slategray;
+}
+a:visited {
+    color: slategray;
+}
+
+.answPar {
+    font-size: 115.5%;
+}

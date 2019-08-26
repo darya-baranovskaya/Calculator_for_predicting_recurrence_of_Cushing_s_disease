@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/daryabaranovskaya/Django/pr2/library.c
+library.h
+/Users/daryabaranovskaya/Django/pr2/library.h
+stdio.h
+-
+math.h
+-
+stdlib.h
+-
+
+/Users/daryabaranovskaya/Django/pr2/library.h
+
