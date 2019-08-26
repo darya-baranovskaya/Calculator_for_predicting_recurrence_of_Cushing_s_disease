@@ -35,7 +35,7 @@ import ctypes
 from ctypes import *
 import os
 dir = os.path.dirname(os.path.realpath(__file__)) + '/'
-libc = stypes.CDLL(dir + "libhello.so")
+libc = ctypes.CDLL(dir + "libhello.so")
 #alloc_func = libc.mainfunc
 #alloc_func.restype = ctypes.POINTER(ctypes.c_char)
 
