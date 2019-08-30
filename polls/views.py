@@ -39,7 +39,6 @@ libc = ctypes.CDLL(dir + "libhello.so")
 #alloc_func = libc.mainfunc
 #alloc_func.restype = ctypes.POINTER(ctypes.c_char)
 
-import numpy
 
 
 from django.views import View
