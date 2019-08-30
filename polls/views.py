@@ -47,12 +47,12 @@ class DesieseView(View):
         return render(request, 'mainpage.html', {})
 
     def post(self, request):
-        sex = request.POST.get('sex')
-        age = request.POST.get('age')
+        sex = float(request.POST.get('sex'))
+        age = float(request.POST.get('age'))
         duration = float(request.POST.get('duration'))
         mri = request.POST.get('mri')
-        cortisol = request.POST.get('cortisol')
-        plasma = request.POST.get('plasma')
+        cortisol = float(request.POST.get('cortisol'))
+        plasma = float(request.POST.get('plasma'))
         # context = {
         #     'sex' : sex,
         #     'age' : age,
