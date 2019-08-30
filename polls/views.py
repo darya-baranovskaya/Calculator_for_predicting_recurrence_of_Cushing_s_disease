@@ -63,10 +63,10 @@ class DesieseView(View):
         #     'plasma' : plasma
         #
         # }
-        cort_m2 = ctypes.c_longdouble(numpy.longdouble(cortisol))
-        ach_m2 = ctypes.c_longdouble(numpy.longdouble(plasma))
-        age_ = ctypes.c_longdouble(numpy.longdouble(age))
-        duration_ = ctypes.c_longdouble(numpy.longdouble(duration))
+        cort_m2 = ctypes.c_longdouble(cortisol)
+        ach_m2 = ctypes.c_longdouble(plasma)
+        age_ = ctypes.c_longdouble(age)
+        duration_ = ctypes.c_longdouble(duration)
         sex_ = ctypes.c_float(float(sex))
         mri_ = ctypes.c_float(float(mri))
         answ = libc.mainfunc(cort_m2, ach_m2, age_, duration_, sex_, mri_)
